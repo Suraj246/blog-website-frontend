@@ -24,7 +24,8 @@ function SignUp() {
       return
     }
     try {
-      const { data } = await axios.post("http://localhost:4000/signup",
+      const { data } = await axios.post("https://blog-backend-swo1.onrender.com/signup",
+        // const { data } = await axios.post("http://localhost:4000/signup",
         {
           ...input,
         },

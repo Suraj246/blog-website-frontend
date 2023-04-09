@@ -10,7 +10,8 @@ const SingleBlogScreen = () => {
     const [blog, setBlog] = useState([])
 
     useEffect(() => {
-        axios.get(`http://localhost:4000/${id}`)
+        axios.get(`https://blog-backend-swo1.onrender.com/${id}`)
+            // axios.get(`http://localhost:4000/${id}`)
             .then((res) => {
                 setBlog(res.data)
             })
@@ -29,7 +30,8 @@ const SingleBlogScreen = () => {
     useEffect(() => {
         const commentId = localStorage.getItem('commentId')
         console.log(commentId)
-        axios.post('http://localhost:4000/store-comment-to-each-blog', { blogId: id, commentId: commentId })
+        axios.post('https://blog-backend-swo1.onrender.com/store-comment-to-each-blog', { blogId: id, commentId: commentId })
+            // axios.post('http://localhost:4000/store-comment-to-each-blog', { blogId: id, commentId: commentId })
             .then((response) => {
                 console.log(response)
                 // window.location.reload()
@@ -42,7 +44,8 @@ const SingleBlogScreen = () => {
             alert('comment is empty')
             return false
         }
-        await axios.post('http://localhost:4000/create-comment', { title })
+        await axios.post('https://blog-backend-swo1.onrender.com/create-comment', { title })
+            // await axios.post('http://localhost:4000/create-comment', { title })
             .then((response) => {
                 console.log(response)
                 localStorage.setItem("commentId", response.data.newPost._id)
@@ -61,7 +64,8 @@ const SingleBlogScreen = () => {
         <div className="blog-screen-page">
             <div className="blog-container">
                 <span className="title">{blog?.title}</span>
-                <img src={`http://localhost:4000/uploads/${blog?.image}`} alt={blog?.title} />
+                <img src={`https://blog-backend-swo1.onrender.com/uploads/${blog?.image}`} alt={blog?.title} />
+                {/* <img src={`http://localhost:4000/uploads/${blog?.image}`} alt={blog?.title} /> */}
                 <p className="content">{blog?.content}</p>
             </div>
             <div className="comments-container">

@@ -26,7 +26,8 @@ const CreateBlog = () => {
             return
         }
         try {
-            const { data } = await axios.post("http://localhost:4000/create-post",
+            const { data } = await axios.post("https://blog-backend-swo1.onrender.com/create-post",
+                // const { data } = await axios.post("http://localhost:4000/create-post",
                 formData,
             );
             if (data) {
@@ -43,7 +44,8 @@ const CreateBlog = () => {
     useEffect(() => {
         const blogId = localStorage.getItem("blogId") || ''
         const userId = JSON.parse(localStorage.getItem("blog userData"))
-        axios.post("http://localhost:4000/store-post-to-each-user", {
+        axios.post("https://blog-backend-swo1.onrender.com/store-post-to-each-user", {
+            // axios.post("http://localhost:4000/store-post-to-each-user", {
             userId, blogId
         })
     }, [])

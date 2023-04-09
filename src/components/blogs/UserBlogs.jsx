@@ -18,7 +18,8 @@ const UserBlogs = () => {
     const getBlogsData = async (event) => {
         const userId = JSON.parse(localStorage.getItem("blog userData"))
         try {
-            const { data } = await axios.post("http://localhost:4000/get-user", userId);
+            const { data } = await axios.post("https://blog-backend-swo1.onrender.com/get-user", userId);
+            // const { data } = await axios.post("http://localhost:4000/get-user", userId);
             if (data) {
                 setBlogs(data.data.blogs)
             }
@@ -44,7 +45,8 @@ const UserBlogs = () => {
         const userId = JSON.parse(localStorage.getItem("blog userData"))
         console.log(idx)
         try {
-            const { data } = await axios.delete(`http://localhost:4000/${userId.userId}/${idx}`);
+            const { data } = await axios.delete(`https://blog-backend-swo1.onrender.com/${userId.userId}/${idx}`);
+            // const { data } = await axios.delete(`http://localhost:4000/${userId.userId}/${idx}`);
             if (data) {
                 setBlogs(data.data.blogs)
             }
@@ -66,7 +68,8 @@ const UserBlogs = () => {
         formData.append("title", updatePost.title)
         formData.append("image", image)
         formData.append("content", updatePost.content)
-        axios.put(`http://localhost:4000/update/${updatePost._id}`, formData)
+        axios.put(`https://blog-backend-swo1.onrender.com/update/${updatePost._id}`, formData)
+            // axios.put(`http://localhost:4000/update/${updatePost._id}`, formData)
             .then((res) => { console.log(res) })
             .catch((err) => { console.log(err) })
         handleClose()
@@ -76,7 +79,8 @@ const UserBlogs = () => {
             {blogs.map((elem, idx) => {
                 return (
                     <div className="user-blog-container" key={idx}>
-                        <img src={`http://localhost:4000/uploads/${elem?.image}`} alt={elem?.title} />
+                        <img src={`https://blog-backend-swo1.onrender.com/uploads/${elem?.image}`} alt={elem?.title} />
+                        {/* <img src={`http://localhost:4000/uploads/${elem?.image}`} alt={elem?.title} /> */}
                         <div className='title-container'>
                             <span>{elem?.title}</span>
                             <span>{elem?.createdAt.slice(0, 10)}</span>

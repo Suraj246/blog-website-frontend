@@ -33,7 +33,8 @@ const BlogPage = ({ inputTitle }) => {
 
     // f()
     const { isLoading, error } = useQuery('movies', () =>
-        axios.get('http://localhost:4000')
+        axios.get('https://blog-backend-swo1.onrender.com')
+            // axios.get('http://localhost:4000')
             .then((response) => setBlogs(response?.data))
     )
     const g = () => {
@@ -73,7 +74,8 @@ const BlogPage = ({ inputTitle }) => {
         formData.append("title", updatePost.title)
         formData.append("image", image)
         formData.append("content", updatePost.content)
-        axios.put(`http://localhost:4000/update/${updatePost._id}`, formData)
+        axios.put(`https://blog-backend-swo1.onrender.com/update/${updatePost._id}`, formData)
+            // axios.put(`http://localhost:4000/update/${updatePost._id}`, formData)
             .then((res) => {
                 console.log(res)
                 window.location.reload()
@@ -89,7 +91,8 @@ const BlogPage = ({ inputTitle }) => {
         // console.log("delete", elem)
         // console.log(idx)
         try {
-            const { data } = await axios.delete(`http://localhost:4000/admin/${admin_id}/${idx}`);
+            const { data } = await axios.delete(`https://blog-backend-swo1.onrender.com/admin/${admin_id}/${idx}`);
+            // const { data } = await axios.delete(`http://localhost:4000/admin/${admin_id}/${idx}`);
             // const { data } = await axios.delete(`http://localhost:4000/admin/${adminId}/${elem._id}/${idx}`);
             if (data) {
                 setBlogs(data.data.blogs)
@@ -128,7 +131,8 @@ const BlogPage = ({ inputTitle }) => {
                                     <NavLink to={`blog/${item._id}`} className="a">
                                         <div className='title-container'>
                                             <div>
-                                                <img src={`http://localhost:4000/uploads/${item?.image}`} alt={item?.title} />
+                                                <img src={`https://blog-backend-swo1.onrender.com/uploads/${item?.image}`} alt={item?.title} />
+                                                {/* <img src={`http://localhost:4000/uploads/${item?.image}`} alt={item?.title} /> */}
                                                 <span className='title'>{item?.title}</span>
                                             </div>
                                         </div>
@@ -225,7 +229,8 @@ const BlogPage = ({ inputTitle }) => {
                                     <NavLink to={`blog/${item._id}`} className="a">
                                         <div className='title-container'>
                                             <div>
-                                                <img src={`http://localhost:4000/uploads/${item?.image}`} alt={item?.title} />
+                                                <img src={`https://blog-backend-swo1.onrender.com/uploads/${item?.image}`} alt={item?.title} />
+                                                {/* <img src={`http://localhost:4000/uploads/${item?.image}`} alt={item?.title} /> */}
                                                 <span className='title'>{item?.title}</span>
                                             </div>
                                         </div>
