@@ -79,8 +79,8 @@ const UserBlogs = () => {
             {blogs.map((elem, idx) => {
                 return (
                     <div className="user-blog-container" key={idx}>
-                        <img src={`https://blog-backend-swo1.onrender.com/uploads/${elem?.image}`} alt={elem?.title} />
-                        {/* <img src={`http://localhost:4000/uploads/${elem?.image}`} alt={elem?.title} /> */}
+                        <img src={`https://blog-backend-swo1.onrender.com/uploads/${elem?.image}`} alt={elem?.title} loading='lazy' />
+                        {/* <img src={`http://localhost:4000/uploads/${elem?.image}`} alt={elem?.title}loading='lazy' /> */}
                         <div className='title-container'>
                             <span>{elem?.title}</span>
                             <span>{elem?.createdAt.slice(0, 10)}</span>

@@ -64,8 +64,8 @@ const SingleBlogScreen = () => {
         <div className="blog-screen-page">
             <div className="blog-container">
                 <span className="title">{blog?.title}</span>
-                <img src={`https://blog-backend-swo1.onrender.com/uploads/${blog?.image}`} alt={blog?.title} />
-                {/* <img src={`http://localhost:4000/uploads/${blog?.image}`} alt={blog?.title} /> */}
+                <img src={`https://blog-backend-swo1.onrender.com/uploads/${blog?.image}`} alt={blog?.title} loading='lazy' />
+                {/* <img src={`http://localhost:4000/uploads/${blog?.image}`} alt={blog?.title} loading='lazy'/> */}
                 <p className="content">{blog?.content}</p>
             </div>
             <div className="comments-container">

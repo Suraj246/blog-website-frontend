@@ -131,8 +131,8 @@ const BlogPage = ({ inputTitle }) => {
                                     <NavLink to={`blog/${item._id}`} className="a">
                                         <div className='title-container'>
                                             <div>
-                                                <img src={`https://blog-backend-swo1.onrender.com/uploads/${item?.image}`} alt={item?.title} />
-                                                {/* <img src={`http://localhost:4000/uploads/${item?.image}`} alt={item?.title} /> */}
+                                                <img src={`https://blog-backend-swo1.onrender.com/uploads/${item?.image}`} alt={item?.title} loading='lazy' />
+                                                {/* <img src={`http://localhost:4000/uploads/${item?.image}`} alt={item?.title}loading='lazy'/> */}
                                                 <span className='title'>{item?.title}</span>
                                             </div>
                                         </div>
@@ -229,7 +229,7 @@ const BlogPage = ({ inputTitle }) => {
                                     <NavLink to={`blog/${item._id}`} className="a">
                                         <div className='title-container'>
                                             <div>
-                                                <img src={`https://blog-backend-swo1.onrender.com/uploads/${item?.image}`} alt={item?.title} />
+                                                <img src={`https://blog-backend-swo1.onrender.com/uploads/${item?.image}`} alt={item?.title} loading='lazy' />
                                                 {/* <img src={`http://localhost:4000/uploads/${item?.image}`} alt={item?.title} /> */}
                                                 <span className='title'>{item?.title}</span>
                                             </div>
